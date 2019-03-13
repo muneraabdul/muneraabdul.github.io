@@ -43,9 +43,7 @@ function threeBoxes (b1,b2,b3) {
     turn.innerHTML = b1.innerHTML + " Won Congrats" ;
     turn.style.fontSize = "45px" ;
     turn.classList.add("zoomIn");
-    turn.style.color = "white" ;
-    
-    
+    turn.style.color = "white" ; 
  }
 
 

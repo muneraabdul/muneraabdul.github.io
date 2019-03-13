@@ -40,5 +40,5 @@ can play the game from here > https://muneraabdul.github.io/
 **Acknowledge** : Alanoud Alrasheed , Marc Wright and Ebere Iweala ..
 
 ---
-# Developer : Munera Alhazza
+**Developer** : Munera Alhazza
 

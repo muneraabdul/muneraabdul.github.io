@@ -29,6 +29,7 @@ function selectWinner() {
     threeBoxes(box1,box5,box9) ;
     else if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML) 
     threeBoxes(box3,box5,box7) ;
+    
 }
 
 // function when X or  O win the background of box will be "yellow" and write "congrats" with red color and text size 45
@@ -70,6 +71,7 @@ for ( var i = 0 ; i <boxes.length ; i++ ) {
 } 
     )
 }
+
 // function to rest the container  
 function replay() {
     
@@ -79,14 +81,10 @@ function replay() {
         boxes[i].style.background = "white" ;
         turn.style.fontSize = "25px" ;
         turn.innerHTML = " play " ;
-        turn.style.color = "white" ; 
-        
-        
-        
-
+        turn.style.color = "white" ;   
     }
-
 }
+
 for(var i =0 ; i<boxes.length ; i++) {
     boxes[i].addEventListener("mouseover", function(e){
         if (e.target.style.background !== "yellow") {

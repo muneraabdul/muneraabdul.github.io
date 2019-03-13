@@ -1,19 +1,8 @@
 var turn = document.getElementById("turn") ,
      boxes = document.querySelectorAll(".box") 
-var x_or_o = 0 ;
-function selectWinnerBoxes(b1,b2,b3) {
-   b1.style.background = "yellow" ;
-   b2.style.background = "yellow" ;
-   b3.style.background = "yellow" ;
-   turn.innerHTML = b1.innerHTML + " Won Congrats" ;
-   turn.style.fontSize = "45px" ;
-   turn.style.color = "red" ;
-   
-   
-}
 
 
-function getWinner() {
+function selectWinner() {
     var box1 = document.getElementById("box1"),
     box2 = document.getElementById("box2"),
     box3 = document.getElementById("box3"),
@@ -25,26 +14,38 @@ function getWinner() {
     box9 = document.getElementById("box9");
 
     if ( box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) 
-    selectWinnerBoxes(box1,box2,box3) ;
+    threeBoxes(box1,box2,box3) ;
     else if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) 
-    selectWinnerBoxes(box4,box5,box6) ;
+    threeBoxes(box4,box5,box6) ;
     else if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) 
-    selectWinnerBoxes(box7,box8,box9) ;
+    threeBoxes(box7,box8,box9) ;
     else if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) 
-    selectWinnerBoxes(box1,box4,box7) ;
+    threeBoxes(box1,box4,box7) ;
     else if (box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML) 
-    selectWinnerBoxes(box2,box5,box8) ;
+    threeBoxes(box2,box5,box8) ;
     else if (box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML) 
-    selectWinnerBoxes(box3,box6,box9) ;
+    threeBoxes(box3,box6,box9) ;
     else if (box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML) 
-    selectWinnerBoxes(box1,box5,box9) ;
+    threeBoxes(box1,box5,box9) ;
     else if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML) 
-    selectWinnerBoxes(box3,box5,box7) ;
+    threeBoxes(box3,box5,box7) ;
 }
 
+// function when X or  O win the background of box will be "yellow" and write "congrats" with red color and text size 45
+function threeBoxes (b1,b2,b3) {
+    b1.style.background = "yellow" ;
+    b2.style.background = "yellow" ;
+    b3.style.background = "yellow" ;
+    turn.innerHTML = b1.innerHTML + " Won Congrats" ;
+    turn.style.fontSize = "45px" ;
+    turn.classList.add("zoomIn");
+    turn.style.color = "white" ;
+    
+    
+ }
 
 
-
+var x_or_o = 0 ;
 for ( var i = 0 ; i <boxes.length ; i++ ) {
     boxes[i].addEventListener("click", function () {
         if ( this.innerHTML !== "x" && this.innerHTML !== "O") {
@@ -52,14 +53,15 @@ for ( var i = 0 ; i <boxes.length ; i++ ) {
             console.log(x_or_o) ;
             this.innerHTML = "X" ;  
             turn.innerHTML = " O Turn Now" ;
-            getWinner() ;
+            selectWinner() ;
             x_or_o += 1 ;
+            
             
         } else {
             console.log(x_or_o) ;
             this.innerHTML = "O" ;
             turn.innerHTML = " X Turn Now" ;
-            getWinner() ;
+            selectWinner() ;
             x_or_o += 1 ;
             
         }
@@ -68,17 +70,35 @@ for ( var i = 0 ; i <boxes.length ; i++ ) {
 } 
     )
 }
-
+// function to rest the container  
 function replay() {
+    
     for(var i =0 ; i<boxes.length ; i++) {
-        boxes[i].classList.remove("win") ;
+        // boxes[i].classList.remove("win") ;
         boxes[i].innerHTML = "" ;
         turn.style.fontSize = "25px" ;
         boxes[i].style.background = "white" ;
         turn.innerHTML = " play " ;
-        turn.style.color = "white" ;
+        turn.style.color = "white" ; 
+        
+        
         
 
     }
 
 }
+for(var i =0 ; i<boxes.length ; i++) {
+    boxes[i].addEventListener("mouseover", function(e){
+        if (e.target.style.background !== "yellow") {
+    e.target.style.background = "grey";
+    
+        }
+        })
+
+        boxes[i].addEventListener("mouseout", function(e){
+            if (e.target.style.background == "grey") {
+
+                e.target.style.background = "white";
+            }
+                })
+            }

@@ -1,0 +1,31 @@
+
+        /* style of background + add image as a href  */
+        
+        body {
+            background : black ;
+          background-image: url("tecr.jpg") , url("tecl.jpg") ;
+          background-repeat: no-repeat;
+          background-size: 800px 800px;
+          background-position: top right , top left;
+        }
+        
+
+        /* style of h1 */
+        h1 {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+      text-align: center ;
+      margin-top: 100px;
+      color:yellow ;
+      font-size: 50px;
+      text-shadow: 2px 2px 6px yellow;   
+  }
+
+  
+  /* style of image "link" */
+  a { 
+    margin :  200px auto ;
+    display : block ;
+    width : 300px ;
+    text-align: center ; 
+  }
+        

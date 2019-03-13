@@ -1,5 +1,5 @@
 
-        /* style of background + add image as a href  */
+        /* style of background + add a href as image to link with game page  */
         
         body {
             background : black ;
@@ -10,7 +10,7 @@
         }
         
 
-        /* style of h1 */
+        /* style of h1  */
         h1 {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
       text-align: center ;

@@ -1,7 +1,7 @@
 var turn = document.getElementById("turn") ,
      boxes = document.querySelectorAll(".box") 
 
-
+var moves = 0;
 function selectWinner() {
     var box1 = document.getElementById("box1"),
     box2 = document.getElementById("box2"),
@@ -29,6 +29,9 @@ function selectWinner() {
     threeBoxes(box1,box5,box9) ;
     else if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML) 
     threeBoxes(box3,box5,box7) ;
+    else if (moves == 9) {
+        turn.innerHTML = "It's a draw!"
+    }
     
 }
 
@@ -49,6 +52,8 @@ function threeBoxes (b1,b2,b3) {
 var x_or_o = 0 ;
 for ( var i = 0 ; i <boxes.length ; i++ ) {
     boxes[i].addEventListener("click", function () {
+        moves++;
+
         if ( this.innerHTML !== "x" && this.innerHTML !== "O") {
         if(x_or_o %2 === 0) {
             // console.log(x_or_o) ;
@@ -83,6 +88,7 @@ function replay() {
         turn.innerHTML = " play " ;
         turn.style.color = "white" ;   
     }
+
 }
 
 for(var i =0 ; i<boxes.length ; i++) {

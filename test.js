@@ -50,7 +50,7 @@ for ( var i = 0 ; i <boxes.length ; i++ ) {
     boxes[i].addEventListener("click", function () {
         if ( this.innerHTML !== "x" && this.innerHTML !== "O") {
         if(x_or_o %2 === 0) {
-            console.log(x_or_o) ;
+            // console.log(x_or_o) ;
             this.innerHTML = "X" ;  
             turn.innerHTML = " O Turn Now" ;
             selectWinner() ;
@@ -58,7 +58,7 @@ for ( var i = 0 ; i <boxes.length ; i++ ) {
             
             
         } else {
-            console.log(x_or_o) ;
+            // console.log(x_or_o) ;
             this.innerHTML = "O" ;
             turn.innerHTML = " X Turn Now" ;
             selectWinner() ;
@@ -76,8 +76,8 @@ function replay() {
     for(var i =0 ; i<boxes.length ; i++) {
         // boxes[i].classList.remove("win") ;
         boxes[i].innerHTML = "" ;
-        turn.style.fontSize = "25px" ;
         boxes[i].style.background = "white" ;
+        turn.style.fontSize = "25px" ;
         turn.innerHTML = " play " ;
         turn.style.color = "white" ; 
         
